@@ -2,38 +2,33 @@
 let num = Math.trunc(Math.random() * 20 + 1);
 let score = 10;
 let highscore = 0;
-
-const onWin = () => {
-  document.querySelector(".text").textContent = num;
-  document.querySelector(".message").textContent = "You won...";
-  document.querySelector(".line").style.border = "2px solid #4E9F3D";
-  document.querySelector(".text").style.backgroundColor = "#4E9F3D";
-  document.querySelector(" .line").style.backgroundColor = "#4E9F3D";
-  document.querySelector(".guessbox").style.backgroundColor = "#4E9F3D";
-  SetHighscore();
+const logtoconsole = () => {
   console.log(num);
   console.log(highscore);
 };
+const msgDisplay = (displaymsg) => {
+  document.querySelector(".message").textContent = displaymsg;
+};
+
+const onWin = () => {
+  document.querySelector(".text").textContent = num;
+  document.querySelector(".message").textContent = "You won ... 🥇";
+  document.querySelector("body").style.backgroundColor = "#4E9F3D";
+  SetHighscore();
+  logtoconsole();
+};
 const onLoose = () => {
   document.querySelector(".text").textContent = num;
-  document.querySelector(".message").textContent = "You loose...";
-  document.querySelector(".line").style.border = "2px solid #F32424";
-  document.querySelector(".text").style.backgroundColor = "#F32424";
-  document.querySelector(".line").style.backgroundColor = "#F32424";
-  document.querySelector(".guessbox").style.backgroundColor = "#F32424";
+  document.querySelector(".message").textContent = "You loose...  😔";
+  document.querySelector("body").style.backgroundColor = "#F32424";
   SetHighscore();
-  console.log(num);
-  console.log(highscore);
-  return;
+  logtoconsole();
 };
 const onAgain = () => {
   score = 10;
   document.querySelector(".scorelevel").textContent = score;
-  document.querySelector(".message").textContent = "Start The Game....";
-  document.querySelector(".line").style.border = "2px solid #fff";
-  document.querySelector(".text").style.backgroundColor = "#fff";
-  document.querySelector(".line").style.backgroundColor = "#fff";
-  document.querySelector(".guessbox").style.backgroundColor = "#fff";
+  document.querySelector(".message").textContent = "  Start The Game  ....";
+  document.querySelector("body").style.backgroundColor = "#000";
   document.querySelector(".inputnum").value = "";
   num = Math.trunc(Math.random() * 20 + 1);
   document.querySelector(".text").textContent = "?";
@@ -61,12 +56,8 @@ const onclikFun = function () {
     document.querySelector(".message").textContent = "Enter The Number";
   } else if (num == guess) {
     onWin();
-    return;
-  } else if (guess > num) {
-    document.querySelector(".message").textContent = "Too High 📈";
-    ScoreDecereaser();
-  } else if (guess < num) {
-    document.querySelector(".message").textContent = "Too Low 📉";
+  } else {
+    msgDisplay(guess > num ? "Too High ...📈" : "Too Low ...📉");
     ScoreDecereaser();
   }
 };

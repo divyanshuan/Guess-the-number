@@ -6,23 +6,27 @@ input::-webkit-inner-spin-button {
 }
 * {
   font-family: "Press Start 2P", cursive;
+}
+body {
   color: #fff;
   background-color: #000;
 }
 
 .mainhead {
-  margin-top: 4rem;
+  margin-top: 3rem;
   text-align: center;
   line-height: 140%;
 }
+.rule {
+  text-align: right;
+}
 .mainbody {
-  margin-top: 4rem;
+  margin-top: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .text {
-  background-color: #fff;
   color: #000;
   font-size: 60px;
   position: relative;
@@ -31,7 +35,7 @@ input::-webkit-inner-spin-button {
 .guessbox {
   background-color: #fff;
   height: 125px;
-  width: 125px;
+  width: 135px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,7 +55,6 @@ input::-webkit-inner-spin-button {
   height: 40px;
   font-weight: 900;
   color: #000;
-  background-color: #fff;
   cursor: pointer;
 }
 .gamefied {
