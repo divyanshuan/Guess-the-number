@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 * {
   font-family: "Press Start 2P", cursive;
   color: #fff;
@@ -83,9 +88,19 @@
   align-items: center;
   justify-content: center;
 }
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+@media (max-width: 350px) {
+  .inputfield input {
+    height: 50px;
+    font-size: 40px;
+    width: 110px;
+  }
+  .displayfield p {
+    font-size: 14px;
+  }
+  .checkbutton {
+    width: 120px;
+  }
+  .gamefied {
+    height: 40vh;
+  }
 }
