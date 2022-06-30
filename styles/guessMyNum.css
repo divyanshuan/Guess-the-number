@@ -106,4 +106,8 @@ body {
   .gamefied {
     height: 40vh;
   }
+  .rule {
+    font-size: 14px;
+    text-align: center;
+  }
 }
