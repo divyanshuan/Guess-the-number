@@ -63,4 +63,9 @@ const onclikFun = function () {
 };
 
 document.querySelector(".checkbutton").addEventListener("click", onclikFun);
+document.addEventListener("click", function (e) {
+  if ((e.key = "Enter")) {
+    onclikFun;
+  }
+});
 document.querySelector(".againbtn").addEventListener("click", onAgain);
